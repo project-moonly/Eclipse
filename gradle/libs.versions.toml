@@ -1,0 +1,54 @@
+[versions]
+kotlin = "1.8.0"
+kotlinx-datetime = "0.4.0"
+kotlinx-collections-immutable = "0.3.5"
+kotlinx-coroutines = "1.6.4"
+reactivex-rxjava3 = "3.1.5"
+
+konf = "1.1.2"
+logging = "3.0.4"
+detekt = "1.22.0"
+ktlintGradle = "11.0.0"
+pluginPublish = "1.1.0"
+versionCheck = "0.44.0"
+versioning = "2.8.2"
+
+minestom = "-SNAPSHOT"
+fluent = "0.70"
+
+[plugins]
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt"}
+kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin"}
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlintGradle"}
+pluginPublish = { id = "com.gradle.plugin-publish", version.ref = "pluginPublish"}
+versioning = { id = "net.nemerosa.versioning", version.ref = "versioning"}
+
+
+[libraries]
+
+kotlin-bom = { module = "org.jetbrains.kotlin:kotlin-bom", version.ref = "kotlin" }
+kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+kotlin-gradlePlugin-api = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin-api", version.ref = "kotlin" }
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+kotlin-scripting-common = { module = "org.jetbrains.kotlin:kotlin-scripting-common", version.ref = "kotlin" }
+kotlin-scripting-dependencies = { module = "org.jetbrains.kotlin:kotlin-scripting-dependencies", version.ref = "kotlin" }
+kotlin-scripting-dependencies-maven = { module = "org.jetbrains.kotlin:kotlin-scripting-dependencies-maven", version.ref = "kotlin" }
+kotlin-scripting-jvm = { module = "org.jetbrains.kotlin:kotlin-scripting-jvm", version.ref = "kotlin" }
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
+kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "kotlinx-collections-immutable" }
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
+
+konf-core = { module = "com.uchuhimo:konf-core", version.ref = "konf"}
+konf-toml = { module = "com.uchuhimo:konf-toml", version.ref = "konf"}
+logging = { module = "io.github.microutils:kotlin-logging", version.ref = "logging"}
+minestom = { module = "com.github.minestom:Minestom", version.ref = "minestom"}
+
+fluent-base = { module = "net.xyzsd.fluent:fluent-base", version.ref = "fluent"}
+fluent-functions-cldr = { module = "net.xyzsd.fluent:fluent-functions-cldr", version.ref = "fluent"}
+
+[bundles]
+kotlin-core = ["kotlin-bom", "kotlin-reflect", "kotlin-stdlib", "kotlinx-collections-immutable", "kotlinx-datetime", "kotlinx-coroutines-core"]
+kotlin-script = ["kotlin-scripting-common", "kotlin-scripting-dependencies", "kotlin-scripting-dependencies-maven", "kotlin-scripting-jvm"]
+konf = ["konf-core", "konf-toml"]
+fluent = ["fluent-base", "fluent-functions-cldr"]
