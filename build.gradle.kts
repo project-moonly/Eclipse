@@ -13,18 +13,18 @@ version = versioning.info.full
 
 
 dependencies {
-    implementation(libs.bundles.kotlin.core)
-    implementation(libs.bundles.kotlin.script)
-    implementation(libs.bundles.konf)
-    implementation(libs.minestom)
-    implementation(libs.logging)
-    implementation(libs.bundles.fluent)
+    api(libs.bundles.kotlin.core)
+    api(libs.bundles.kotlin.script)
+    api(libs.bundles.konf)
+    api(libs.minestom)
+    api(libs.logging)
+    api(libs.bundles.fluent)
 }
 
 publishing {
     publications {
-        create<MavenPublication>("jitpack") {
-            groupId = "com.github.project-moonly"
+        create<MavenPublication>("local") {
+            groupId = "org.moonlymc"
             artifactId = "Eclipse"
             version = rootProject.version.toString()
 
